@@ -1,4 +1,3 @@
-import React from "react";
 import { ITask } from "./data/Task.type";
 type Props = {
     percentage: number;
