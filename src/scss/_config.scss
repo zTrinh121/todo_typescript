@@ -1,0 +1,40 @@
+*{
+    
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 400;
+    src: url(/src/assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'PoppinsBold';
+    src: url(/src/assets/fonts/Poppins-SemiBold.ttf);
+}
+
+@mixin flexSpaceBetween($direction){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin flexCenter($direction){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+
+@mixin fontTittle(){
+    color: $tittle-color;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #fff;
+}

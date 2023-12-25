@@ -1,0 +1,314 @@
+@import './config';
+@import './variables';
+
+body{
+    background-color: #F0F2F5;
+}
+
+.tasks{
+    @include flexCenter(column);
+}
+
+.tasks__header{
+    @include flexSpaceBetween(row);
+    width: 658px;
+    margin: 54px 32px 40px 32px;
+
+    .header__tittle{
+        font-family: PoppinsBold;
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 36px;
+    }
+
+    .header__btn{
+        @include flexCenter(row);
+        width: 157px;
+        height: 44px;
+        border-radius: 14px;
+        background: #713FFF;
+        box-shadow: 0px 6px 12px 0px rgba(113, 63, 255, 0.25);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        
+        .btn__content{
+            margin-left: 12px;
+        }
+    }
+}
+
+.tasks__task{
+    @include flexSpaceBetween(row);
+    width: 722px;
+    height: 101px;
+    border-radius: 16px;
+    padding: 24px 32px;
+    background-color: #fff;
+
+    .task__content{
+        width: 200px;
+        .content__header{
+            @include fontTittle();
+        }
+
+        .content__detail{
+            color: $primary-color;
+            font-size: 16px;
+
+        }
+    }
+
+    .task__priority{
+        .priority__header{
+            @include fontTittle();
+        }
+
+        .priority__detail{
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: capitalize;
+            
+
+        }
+    }
+
+    .task__progressbar{
+        @include flexCenter(row);
+        width: 120px;
+        padding: 8px 16px;
+        border-radius: 8px;
+        background: #EDEEF0;
+        font-size: 14px;
+        color: #7D8592;
+        font-family: Arial;
+        border: none;
+    }
+    .task__function{
+        display: none;
+    }
+
+    .task__edit, .task__delete{
+        cursor: pointer;
+    }
+
+}
+
+.tasks__task + .tasks__task{
+    margin-top: 20px;
+}
+
+// Modal
+
+.task{
+    @include flexSpaceBetween(column);
+    position: fixed;
+    width: 560px;
+    height: 382px;
+    padding: 40px 60px;
+    border-radius: 24px;
+    background: #FFF;
+}
+
+.task__header{
+    @include flexSpaceBetween(row);
+    width: 440px;
+    .header__tittle{
+        font-family: PoppinsBold;
+        font-size: 22px;
+    }
+    img{
+        cursor: pointer;
+    }
+}
+
+.task__name{
+    width: 440px;
+    height: 77px;
+    
+
+    .name__tittle{
+        font-family: PoppinsBold;
+        font-size: 14px;
+        color: $progress-color;
+    }
+
+    .name__detail{
+        width: 100%;
+        padding: 12px 20px;
+        border-radius: 8px;
+        border: 1px solid #D8E0F0;
+        margin-top: 8px;
+    }
+}
+
+.task__priorities{
+     width: 440px;
+
+    .priorities__tittle{
+        font-family: PoppinsBold;
+        font-size: 14px;
+        color: $progress-color;
+    }
+    
+    .priority{
+        @include flexSpaceBetween(row);
+        .prior__radio{
+
+            input{
+                display: none;
+            }
+
+            label{
+                display: inline-block;
+                width: 120px;
+                height: 36px;
+                border-radius: 10px;
+                margin-top: 8px;
+                background-color: #fff;
+                cursor: pointer;
+                border: 1px solid #D8E0F0;
+                padding-top: 5px;
+                text-align: center;
+            }
+        }
+
+        .radio--high label{
+            color: #F73446;
+            border: 1px solid #F73446;
+
+
+        }
+
+        .radio--medium label{
+            color: #FFBD21;
+            border: 1px solid #FFBD21;
+        }
+
+        .radio--low label{
+            color: #0AC947;
+            border: 1px solid #0AC947;
+        }
+
+    }
+      
+      .radio--high input:checked + label {
+        color: #fff;
+        background-color: #F73446;
+      }
+
+      .radio--medium input:checked + label {
+        color: #fff;
+        background-color: #FFBD21;
+      }
+
+      .radio--low input:checked + label {
+        color: #fff;
+        background-color: #0AC947;
+      }
+
+}
+
+.task__progressbar{
+    cursor: pointer;
+}
+
+.circle-progressbar{
+    svg{
+        border-radius: 50%;
+        cursor: pointer;
+
+        .circle__background{
+            fill: none;
+            stroke: #E5E6E9;
+        }
+        .circle__progress{
+            fill: none;
+            stroke: #713FFF;
+        }
+    }
+}
+
+.task__submit{
+    
+    .submit__delete, .submit__cancel, .submit__add, .submit__edit{
+        width: 114px;
+        height: 40px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .submit__delete, .submit__add, .submit__edit{
+        margin-right: 20px;
+        border: 1px solid #713FFF;       
+        background: #713fff;
+        color: #fff;
+        font-family: PoppinsBold;
+
+        &:disabled{
+            background-color: rgba(113, 63, 255, 0.8);
+            border: rgba(113, 63, 255, 0.8);
+        }
+        &:hover{
+            background-color: rgba(113, 63, 255, 0.8);
+        }
+    }
+
+    .submit__cancel{
+        color: $progress-color;
+        border: 1px solid #D8E0F0;
+        background-color: #ffffff;
+    }
+}
+
+//Responsive 
+@media (max-width: $mobile-width){
+    .tasks__header{
+        width: 370px;
+        margin: 50px 0px;
+    }
+
+    .tasks__task{       
+        @include flexSpaceBetween(column);
+        align-items: flex-start;
+        width: 370px;
+        height: 263px;
+        border-radius: 24px;
+        padding: 20px;
+
+        .task__progressbar{
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+
+        .task__edit--pc,
+        .task__delete--pc {
+          display: none; 
+        }
+        .task__function{
+            display: block;
+
+            .task__edit--mobile{
+                margin-right: 24px;
+            }
+        }
+
+    }
+
+    //Modal
+    .task{
+        width: 370px;
+
+        .task__header, .task__name, .task__priorities{
+            width: 300px;
+        }
+
+        .task__priorities .priority ,.prior__radio label{
+            width: 95px !important;
+            margin-right: 10px;
+        }
+        
+
+    }
+}

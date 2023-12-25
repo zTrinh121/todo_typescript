@@ -1,0 +1,35 @@
+@import '../../scss/config';
+@import '../../scss/variables';
+
+
+.wrapper{
+    @include flexCenter(column);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.40);
+}
+
+.task{
+    width: 500px;
+    height: 218px;
+    border-radius: 24px;
+    background: #FFF;
+    padding: 40px 60px;
+    @include flexCenter(column);
+
+    .task__header{
+        font-family: PoppinsBold;
+        font-size: 22px;
+        text-align: center;
+        margin-bottom: 32px;
+    }
+}
+
+@media (max-width: $mobile-width){
+    .task{
+        width: 370px;
+    }
+}
