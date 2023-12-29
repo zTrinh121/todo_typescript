@@ -55,16 +55,20 @@ body{
         .content__detail{
             color: $primary-color;
             font-size: 16px;
-
+            font-weight: 400;
+            word-break: break-word;
         }
     }
 
     .task__priority{
+        width: 72px;
+        height: 24px;
         .priority__header{
             @include fontTittle();
         }
 
         .priority__detail{
+            font-family: PoppinsMedium;
             font-size: 16px;
             font-weight: 500;
             text-transform: capitalize;
@@ -275,6 +279,10 @@ body{
         height: 263px;
         border-radius: 24px;
         padding: 20px;
+        .task__priority{
+            width: 47px;
+            height: 42px;
+        }
 
         .task__progressbar{
             padding: 8px 12px;
@@ -299,7 +307,6 @@ body{
     //Modal
     .task{
         width: 370px;
-
         .task__header, .task__name, .task__priorities{
             width: 300px;
         }

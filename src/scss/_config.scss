@@ -3,13 +3,17 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Poppins;
+    font-family: PoppinsRegular;
 }
 
 @font-face {
-    font-family: 'Poppins';
-    font-weight: 400;
+    font-family: 'PoppinsRegular';
     src: url(/src/assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'PoppinsMedium';
+    src: url(/src/assets/fonts/Poppins-Medium.ttf);
 }
 
 @font-face {

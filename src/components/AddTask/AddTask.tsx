@@ -12,8 +12,8 @@ type ModalProps = {
 const  AddTask= (props: ModalProps) => {
     const { onClose, handleSubmit } = props;
     const [taskName, setTaskName] = useState("");
-    const [priority, setPriority] = useState("");
-    const isEmpty = taskName.trim() === "" || priority==="";
+    const [priority, setPriority] = useState("low");
+    const isEmpty = taskName.trim() === "" ;
     
     const handleBtnSubmit = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -50,11 +50,11 @@ const  AddTask= (props: ModalProps) => {
                         <label htmlFor="prior--high">High</label>
                     </div>
                     <div className="prior__radio radio--medium">
-                        <input type="radio" value="medium" name='priority' id='prior--medium' onChange={e => setPriority(e.target.value)} />
+                        <input type="radio" value="medium" name='priority'  id='prior--medium' onChange={e => setPriority(e.target.value)} />
                         <label htmlFor="prior--medium">Medium</label> 
                     </div>
                     <div className="prior__radio radio--low">
-                        <input type="radio" name='priority' value="low" id='prior--low' onChange={e => setPriority(e.target.value)}/>
+                        <input type="radio" name='priority' value="low" id='prior--low' checked={priority==='low'} onChange={e => setPriority(e.target.value)}/>
                         <label htmlFor="prior--low">Low</label>
                     </div>
 
