@@ -81,8 +81,9 @@ const TaskList = (props: Props) => {
                     <CircularProgress percentage={task.percentage} circleWidth={24} task={task} toggleProgress={toggleProgress}/>
                     {/*Start: Responsive mobile */}
                     <div className="task__function">
+                    <img className="task__delete task__delete--mobile" src={deleteTask} alt="" onClick={() => handleDeleteOpen(task)}/>
                       <img className="task__edit task__edit--mobile" src={editTask} alt="" onClick={() => handleEditOpen(task)} />
-                      <img className="task__delete task__delete--mobile" src={deleteTask} alt="" onClick={() => handleDeleteOpen(task)}/>
+                      
                     </div> 
                      {/*End: Responsive mobile  */}
                     <img className="task__edit task__edit--pc" src={editTask} alt="" onClick={() => handleEditOpen(task)}/>

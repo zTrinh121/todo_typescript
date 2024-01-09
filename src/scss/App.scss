@@ -34,6 +34,9 @@ body{
         
         .btn__content{
             margin-left: 12px;
+            font-size: 16px;
+            font-family: Arial;
+            font-weight: 700;
         }
     }
 }
@@ -62,7 +65,7 @@ body{
 
     .task__priority{
         width: 72px;
-        height: 24px;
+        height: 53px;
         .priority__header{
             @include fontTittle();
         }
@@ -92,7 +95,10 @@ body{
         display: none;
     }
 
-    .task__edit, .task__delete{
+    .task__edit{
+        cursor: pointer;
+    }
+    .task__delete{
         cursor: pointer;
     }
 
@@ -156,6 +162,9 @@ body{
     }
     
     .priority{
+        width: 384px;
+        height: 36px;
+        
         @include flexSpaceBetween(row);
         .prior__radio{
 
@@ -218,6 +227,7 @@ body{
 }
 
 .circle-progressbar{
+    height: 24px;
     svg{
         border-radius: 50%;
         cursor: pointer;
@@ -272,6 +282,10 @@ body{
         margin: 50px 0px;
     }
 
+    .tasks__task + .tasks__task{
+        margin-top: 15px;
+    }
+
     .tasks__task{       
         @include flexSpaceBetween(column);
         align-items: flex-start;
@@ -279,12 +293,19 @@ body{
         height: 263px;
         border-radius: 24px;
         padding: 20px;
+        .task__content .content__detail{
+            font-size: 14px;
+        }
         .task__priority{
             width: 47px;
             height: 42px;
+            .priority__detail{
+                font-size: 14px;
+            }
         }
 
         .task__progressbar{
+            font-size: 12px;
             padding: 8px 12px;
             cursor: pointer;
         }
@@ -297,7 +318,7 @@ body{
         .task__function{
             display: block;
 
-            .task__edit--mobile{
+            .task__delete--mobile{
                 margin-right: 24px;
             }
         }
@@ -315,6 +336,7 @@ body{
             width: 95px !important;
             margin-right: 10px;
         }
+        
         
 
     }
